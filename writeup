@@ -1,0 +1,14 @@
+📊 Chart 1: Average Square Footage by County
+The first visualization shows a bar chart of the average square footage of buildings by county across the dataset. 
+This plot provides an overview of how building sizes vary across counties in Illinois. 
+The x-axis is encoded with the County (ordinal), and the y-axis encodes the average of Square Footage (quantitative). I chose a bar chart because it makes it easy to compare averages across distinct categories. Tooltips were added to display exact values when users hover over each bar, enhancing clarity without cluttering the chart.
+
+To prepare the data, I used the full dataset and grouped it by County, computing the mean of the Square Footage.
+I also stripped whitespace from column names to ensure clean encoding. No further transformation was needed since the data was already well-structured for this static summary view.
+
+
+
+📈 Chart 2: Interactive Line Chart of Square Footage Over Time
+The second chart is a line chart that shows how the average square footage of buildings has changed over time, segmented by Usage Description (e.g., “Assembly”, “Office”). Only the top 5 most common usage types were included to keep the chart readable. The x-axis represents 5-year bins of the Year Constructed to smooth out irregularities in the data, and the y-axis is a symmetric logarithmic scale of the mean Square Footage. Colors encode the Usage Description, allowing visual distinction between lines.
+
+For interactivity, I added a dropdown menu to filter and highlight one usage type at a time. A hover effect was also included, so when users mouse over a line, it becomes more prominent. This dual-layer interactivity makes it easier to explore the trend of a specific usage while still viewing context from other categories. This plot builds on an earlier static version I created in Homework #5, but now includes a dropdown filter, hover response, and smoothed binning for more effective comparison using Altair.
