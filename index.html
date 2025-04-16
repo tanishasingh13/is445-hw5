@@ -1,14 +1,39 @@
-📊 Chart 1: Average Square Footage by County
-The first visualization shows a bar chart of the average square footage of buildings by county across the dataset. 
-This plot provides an overview of how building sizes vary across counties in Illinois. 
-The x-axis is encoded with the County (ordinal), and the y-axis encodes the average of Square Footage (quantitative). I chose a bar chart because it makes it easy to compare averages across distinct categories. Tooltips were added to display exact values when users hover over each bar, enhancing clarity without cluttering the chart.
+---
+layout: default
+title: Charts and Writeup
+---
 
-To prepare the data, I used the full dataset and grouped it by County, computing the mean of the Square Footage.
-I also stripped whitespace from column names to ensure clean encoding. No further transformation was needed since the data was already well-structured for this static summary view.
+<h1>📊 Visualization Homework</h1>
 
+<!-- Chart 1 Section -->
+<h2>Chart 1: Average Square Footage by County</h2>
+<p>
+This bar chart shows the average square footage of buildings across different counties in Illinois. 
+The x-axis represents the counties, sorted by average size, and the y-axis shows the mean square footage.
+A bar chart was chosen for easy comparison between categories. The tooltip reveals specific values on hover. 
+No transformations were required apart from cleaning the column names.
+</p>
+<div id="chart1"></div>
 
+<hr>
 
-📈 Chart 2: Interactive Line Chart of Square Footage Over Time
-The second chart is a line chart that shows how the average square footage of buildings has changed over time, segmented by Usage Description (e.g., “Assembly”, “Office”). Only the top 5 most common usage types were included to keep the chart readable. The x-axis represents 5-year bins of the Year Constructed to smooth out irregularities in the data, and the y-axis is a symmetric logarithmic scale of the mean Square Footage. Colors encode the Usage Description, allowing visual distinction between lines.
+<!-- Chart 2 Section -->
+<h2>Chart 2: Interactive Line Chart of Square Footage Over Time</h2>
+<p>
+This interactive line chart shows how average square footage has changed over time for the top 5 most common usage types (like “Assembly” or “Office”). 
+Construction years are grouped into 5-year bins. Colors represent different usage types. 
+A dropdown lets the user highlight one category at a time, and a hover effect adds focus on hover.
+The chart uses symmetric logarithmic scale for better comparison of values.
+</p>
+<div id="chart2"></div>
 
-For interactivity, I added a dropdown menu to filter and highlight one usage type at a time. A hover effect was also included, so when users mouse over a line, it becomes more prominent. This dual-layer interactivity makes it easier to explore the trend of a specific usage while still viewing context from other categories. This plot builds on an earlier static version I created in Homework #5, but now includes a dropdown filter, hover response, and smoothed binning for more effective comparison using Altair.
+<!-- Vega Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Embed Charts -->
+<script>
+  vegaEmbed('#chart1', '/assets/chart1.json').catch(console.error);
+  vegaEmbed('#chart2', '/assets/chart2.json').catch(console.error);
+</script>
