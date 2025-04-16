@@ -1,7 +1,10 @@
----
-layout: default
-title: Charts and Writeup
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📊 Visualization Homework</title>
+</head>
+<body>
 
 <h1>📊 Visualization Homework</h1>
 
@@ -34,6 +37,9 @@ The chart uses symmetric logarithmic scale for better comparison of values.
 
 <!-- Embed Charts -->
 <script>
-  vegaEmbed('#chart1', '/chart1.json').catch(console.error);
-  vegaEmbed('#chart2', '/chart2.json').catch(console.error);
+  vegaEmbed('#chart1', 'chart1.json').catch(console.error);
+  vegaEmbed('#chart2', 'chart2.json').catch(console.error);
 </script>
+
+</body>
+</html>
